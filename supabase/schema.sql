@@ -117,22 +117,22 @@ on conflict (slug) do nothing;
 
 with c as (select id, slug from public.categories)
 insert into public.listings (slug, title, category_id, price, price_suffix, location, status, featured, description, specs) values
-  ('5-bed-detached-duplex-lekki', '5-Bedroom Detached Duplex', (select id from c where slug='houses'), 285000000, null, 'Lekki Phase 1, Lagos', 'available', true,
+  ('5-bed-detached-duplex-lekki', '5-Bedroom Detached Duplex', (select id from c where slug='houses'), 285000000, null, 'Lekki Phase 1, Uyo', 'available', true,
    'A spacious contemporary duplex with a private garden, boys'' quarters, fitted kitchen and 24/7 estate security.', '{"bedrooms":5,"bathrooms":6,"area":"650 sqm","title":"C of O"}'),
-  ('4-bed-terrace-ikoyi', '4-Bedroom Terrace with Pool', (select id from c where slug='houses'), 410000000, null, 'Ikoyi, Lagos', 'available', true,
+  ('4-bed-terrace-ikoyi', '4-Bedroom Terrace with Pool', (select id from c where slug='houses'), 410000000, null, 'Ikoyi, Uyo', 'available', true,
    'Elegant terrace in a gated Ikoyi enclave with shared pool, gym and backup power.', '{"bedrooms":4,"bathrooms":5,"area":"480 sqm","title":"Governor''s Consent"}'),
   ('3-bed-bungalow-gwarinpa', '3-Bedroom Bungalow', (select id from c where slug='houses'), 95000000, null, 'Gwarinpa, Abuja', 'sold', false,
    'Well-finished family bungalow on a corner plot, close to schools and shops.', '{"bedrooms":3,"bathrooms":3,"area":"600 sqm plot","title":"R of O"}'),
   ('6-bed-mansion-maitama', '6-Bedroom Mansion', (select id from c where slug='houses'), 950000000, null, 'Maitama, Abuja', 'available', false,
    'Grand residence with cinema room, elevator, pool and landscaped gardens.', '{"bedrooms":6,"bathrooms":8,"area":"1,200 sqm","title":"C of O"}'),
 
-  ('2-bed-serviced-vi', '2-Bedroom Serviced Apartment', (select id from c where slug='serviced-apartments'), 180000, '/ night', 'Victoria Island, Lagos', 'available', true,
+  ('2-bed-serviced-vi', '2-Bedroom Serviced Apartment', (select id from c where slug='serviced-apartments'), 180000, '/ night', 'Victoria Island, Uyo', 'available', true,
    'Ocean-view apartment with housekeeping, high-speed Wi-Fi, 24/7 power and concierge.', '{"bedrooms":2,"bathrooms":2,"area":"140 sqm","stay":"Short & long stay"}'),
-  ('studio-ikeja-gra', 'Executive Studio', (select id from c where slug='serviced-apartments'), 65000, '/ night', 'Ikeja GRA, Lagos', 'available', false,
+  ('studio-ikeja-gra', 'Executive Studio', (select id from c where slug='serviced-apartments'), 65000, '/ night', 'Ikeja GRA, Uyo', 'available', false,
    'Compact, stylish studio minutes from the airport — ideal for business travellers.', '{"bedrooms":1,"bathrooms":1,"area":"55 sqm","stay":"Short stay"}'),
   ('3-bed-serviced-wuse', '3-Bedroom Penthouse', (select id from c where slug='serviced-apartments'), 12000000, '/ year', 'Wuse 2, Abuja', 'available', true,
    'Penthouse with rooftop terrace, gym access, cleaning service and dedicated parking.', '{"bedrooms":3,"bathrooms":4,"area":"260 sqm","stay":"Long stay"}'),
-  ('1-bed-serviced-lekki', '1-Bedroom Serviced Apartment', (select id from c where slug='serviced-apartments'), 85000, '/ night', 'Lekki, Lagos', 'sold', false,
+  ('1-bed-serviced-lekki', '1-Bedroom Serviced Apartment', (select id from c where slug='serviced-apartments'), 85000, '/ night', 'Lekki, Uyo', 'sold', false,
    'Bright one-bedroom with smart TV, fully equipped kitchen and pool access.', '{"bedrooms":1,"bathrooms":1,"area":"75 sqm","stay":"Short & long stay"}'),
 
   ('velvet-3-seater-sofa', 'Velvet 3-Seater Sofa', (select id from c where slug='furnishings'), 850000, null, 'Showroom, Lekki', 'available', true,

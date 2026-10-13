@@ -1,16 +1,22 @@
-"use client";
-import { trackWhatsAppLead } from "@/lib/track";
-import { whatsappLink } from "@/lib/utils";
+'use client';
+import { trackWhatsAppLead } from '@/lib/track';
+import { whatsappLink } from '@/lib/utils';
+import { FaWhatsapp } from 'react-icons/fa';
 
 type Props = {
   listing?: { title: string; slug: string };
   label?: string;
-  size?: "sm" | "lg";
+  size?: 'sm' | 'lg';
   className?: string;
 };
 
-export default function WhatsAppButton({ listing, label = "Chat on WhatsApp", size = "lg", className = "" }: Props) {
-  const pad = size === "sm" ? "px-3 py-2 text-xs" : "px-5 py-3 text-sm";
+export default function WhatsAppButton({
+  listing,
+  label = 'Chat on WhatsApp',
+  size = 'lg',
+  className = '',
+}: Props) {
+  const pad = size === 'sm' ? 'px-3 py-2 text-xs' : 'px-5 py-3 text-sm';
   return (
     <a
       href={whatsappLink(listing)}
@@ -19,9 +25,7 @@ export default function WhatsAppButton({ listing, label = "Chat on WhatsApp", si
       onClick={() => trackWhatsAppLead(listing?.title)}
       className={`inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp font-semibold text-white transition hover:brightness-110 ${pad} ${className}`}
     >
-      <svg viewBox="0 0 24 24" className={size === "sm" ? "h-4 w-4" : "h-5 w-5"} fill="currentColor" aria-hidden>
-        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 12.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1a8 8 0 0 1-4.1-3.6c-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5c0 1.5 1.1 2.9 1.2 3.1.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4l-.6-.4z" />
-      </svg>
+      <FaWhatsapp className={size === 'sm' ? 'h-4 w-4' : 'h-5 w-5'} />
       {label}
     </a>
   );
