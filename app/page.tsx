@@ -39,7 +39,7 @@ export default async function Home() {
           priority
           className="object-cover opacity-40"
         />
-        <div className="container-x relative py-28 md:py-40">
+        <div className="container-x relative py-16 md:py-32">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brass-light">
             Uyo · Abuja
           </p>
